@@ -24,12 +24,6 @@ preinstall:
 install:
   - npm install
 
-postinstall:
-  - sudo /etc/init.d/xvfb start
-  - export DISPLAY=:99
-  - sleep 3
-  - fluxbox &
-
 test:
   - if [[ "$SCRIPT" ]]; then npm run-script $SCRIPT; fi
   - if [[ "$NODE_SCRIPT" ]]; then node ./$NODE_SCRIPT; fi
